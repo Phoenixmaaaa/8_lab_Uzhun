@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ads Board</title>
+    <style>
+        table, th, td {
+            font-size: 20px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>Ads Board</h1>
+<hr>
+<h2>Create</h2>
+<form name="createAd" action="{{ ACTION }}" method="POST">
+    <label>
+        E-Mail
+        <br>
+        <input type="email" name="email">
+    </label>
+    <br>
+    <label>
+        Category
+        <br>
+        <select name="category">
+            {{ CATEGORIES }}
+        </select>
+    </label>
+    <br>
+    <label>
+        Title
+        <br>
+        <input type="text" name="title" maxlength="40">
+    </label>
+    <br>
+    <label>
+        Description
+        <br>
+        <textarea name="description" rows="10" cols="80"></textarea>
+    </label>
+    <br>
+    <input type="submit" name="createButton" value="Create"/>
+</form>
+<hr>
+<h2>Recent</h2>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>E-Mail</th>
+    </tr>
+    {{ ADVERTISEMENTS }}
+</table>
+</body>
+</html>
